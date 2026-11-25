@@ -1,0 +1,15 @@
+# Static portfolio on the Oracle VM. The shared Caddy (network deploy_default)
+# does HTTPS and proxies sawyerpham.dev -> portfolio:8000.
+#   Redeploy: copy index.html into ./site/ on the server
+services:
+  portfolio:
+    image: caddy:2.8.4
+    command: caddy file-server --root /srv --listen :8000
+    volumes:
+      - ./site:/srv:ro
+    restart: unless-stopped
+    networks: [deploy_default]
+
+networks:
+  deploy_default:
+    external: true
