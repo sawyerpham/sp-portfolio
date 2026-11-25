@@ -40,7 +40,9 @@
       transition: border-color .15s;
     }
     .cards a:hover, .cards a:focus-visible { border-color: var(--fg); }
-    .cards { grid-template-columns: repeat(2, 1fr); }
+    .cards { grid-template-columns: repeat(3, 1fr); }
+    .cards a { aspect-ratio: 1; }
+    @media (max-width: 640px) { .cards a { aspect-ratio: auto; } }
     @media (max-width: 640px) { .cards { grid-template-columns: minmax(0, 1fr); } }
     h2 { font-size: 1.1rem; display: flex; justify-content: space-between; gap: 12px; }
     header { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px; }
@@ -105,6 +107,7 @@
       .cards li:nth-child(2) { animation-delay: .32s; }
       .cards li:nth-child(3) { animation-delay: .4s; }
       .cards li:nth-child(4) { animation-delay: .48s; }
+      .cards li:nth-child(5) { animation-delay: .56s; }
       main > .section, main > .cards ~ * { animation-delay: .24s; }
 
       .cards a { transition: border-color .25s ease, transform .25s ease; }
@@ -139,6 +142,11 @@
 
     <h2 class="section">Projects</h2>
     <ul class="cards">
+      <li><a href="https://fantasy.sawyerpham.dev">
+        <h2>NBA Fantasy Assistant<span class="kind">LIVE<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></h2>
+        <p>Win-probability lineup engine used weekly by a 12-team league, with 300+ tests in CI.</p>
+        <div class="tags" data-tags="Python, FastAPI, React, SQLite, Docker, GitHub Actions"></div>
+      </a></li>
       <li><a href="https://poker.sawyerpham.dev">
         <h2>Poker Dictionary<span class="kind">LIVE<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></h2>
         <p>Custom game engine for 2–9 players with side pots, Monte Carlo equity, and configurable NPC AI.</p>
@@ -242,9 +250,9 @@
     const ORDER = [
       'Java', 'Python', 'C++', 'JavaScript', 'TypeScript', 'SQL',            // languages
       'React', 'Node.js', 'Spring Boot', 'FastAPI', 'Zustand', 'Tailwind', 'ncurses', // frameworks, libraries
-      'MongoDB', 'Neo4j',                                                   // databases
+      'MongoDB', 'Neo4j', 'SQLite',                                                   // databases
       'WebSockets', 'SSE', 'Worker Threads',                                // techniques
-      'Docker', 'Linux', 'Git', 'CI/CD', 'Make', 'Playwright', 'Android Studio', // tools
+      'Docker', 'Linux', 'Git', 'CI/CD', 'GitHub Actions', 'Make', 'Playwright', 'Android Studio', // tools
     ];
     const rank = tag => (ORDER.indexOf(tag) + 1) || ORDER.length + 1; // unlisted tags go last
     for (const box of document.querySelectorAll('[data-tags]')) {
