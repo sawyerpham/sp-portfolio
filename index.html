@@ -149,8 +149,8 @@
       </a></li>
       <li><a href="https://poker.sawyerpham.dev">
         <h2>Poker Dictionary<span class="kind">LIVE<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></h2>
-        <p>Custom game engine for 2–9 players with side pots, Monte Carlo equity, and configurable NPC AI.</p>
-        <div class="tags" data-tags="TypeScript, React, Zustand, Tailwind, Docker"></div>
+        <p>Rust CFR solver running multithreaded in WebAssembly, a flop-to-river trainer, and a 2–9 player engine with NPC AI.</p>
+        <div class="tags" data-tags="TypeScript, Rust, Python, React, FastAPI, WebAssembly, SQLite, Docker"></div>
       </a></li>
       <li><a href="https://blackjack.sawyerpham.dev">
         <h2>Blackjack Dictionary<span class="kind">LIVE<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></h2>
@@ -248,10 +248,10 @@
 
     // To change tags, edit a data-tags list; order and duplicates are handled here.
     const ORDER = [
-      'Java', 'Python', 'C++', 'JavaScript', 'TypeScript', 'SQL',            // languages
+      'Java', 'Python', 'C++', 'Rust', 'JavaScript', 'TypeScript', 'SQL',    // languages
       'React', 'Node.js', 'Spring Boot', 'FastAPI', 'Zustand', 'Tailwind', 'ncurses', // frameworks, libraries
       'MongoDB', 'Neo4j', 'SQLite',                                                   // databases
-      'WebSockets', 'SSE', 'Worker Threads',                                // techniques
+      'WebAssembly', 'WebSockets', 'SSE', 'Worker Threads',                 // techniques
       'Docker', 'Linux', 'Git', 'CI/CD', 'GitHub Actions', 'Make', 'Playwright', 'Android Studio', // tools
     ];
     const rank = tag => (ORDER.indexOf(tag) + 1) || ORDER.length + 1; // unlisted tags go last
